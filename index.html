@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/jquery-3.1.1.min.js"></script>
+		<script src="js/angular-1.4.6.min.js"></script>
+		<script src="js/angular-ui-router.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/swiper.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/1.css"/>
+		<title>子路由</title>
+	</head>
+	<body ng-app="app">
+		<div style="width: 100%;"><img src="img/1_01.png" style="width: 100%;"/></div>
+		<ul id="top" class="nav navbar-fixed-bottom">
+			<li>
+				
+				<a ui-sref="btn"><img src="img/1_14.png"/></a>
+			</li>
+			<li>
+				
+				<a ui-sref="btn1"><img src="img/1_16.png"/></a>
+			</li>
+			<li>
+				
+				<a ui-sref="btn2"><img src="img/1_相机.png"/></a>
+			</li>
+			<li>
+				
+				<a ui-sref="btn3"><img src="img/1_19.png"/></a>
+			</li>
+			<li>
+				
+				<a ui-sref="btn4"><img src="img/1_22.png"/></a>
+			</li>
+			
+		</ul>
+		<ui-view></ui-view>
+	</body>
+	<script>
+		angular.module("app",["ui.router"])
+		.config(function($stateProvider,$urlRouterProvider){
+		
+			$stateProvider
+			.state("btn",{
+				url:"/btn",
+				templateUrl:"跳转的页面/1.html"
+			})
+		
+			.state("btn.fj",{
+				url:"/fj",
+				templateUrl:"跳转的页面/a.html"
+			})
+			.state("btn.rm",{
+				url:"/rm",
+				templateUrl:"跳转的页面/b.html"
+			})
+			.state("btn.gw",{
+				url:"/gw",
+				templateUrl:"跳转的页面/c.html"
+			})
+			.state("btn.tkx",{
+				url:"/tkx",
+				templateUrl:"跳转的页面/d.html"
+			})
+			.state("btn.hw",{
+				url:"/hw",
+				templateUrl:"跳转的页面/e.html"
+			})
+			.state("btn.sy",{
+				url:"/sy",
+				templateUrl:"跳转的页面/f.html"
+			})
+			.state("btn1",{
+				url:"/btn1",
+				templateUrl:"跳转的页面/2.html"
+			})
+			.state("btn1.gz",{
+				url:"/gz",
+				templateUrl:"跳转的页面/a1.html"
+			})
+			.state("btn1.gc",{
+				url:"/gc",
+				templateUrl:"跳转的页面/b1.html"
+			})
+			.state("btn1.tc",{
+				url:"/gc",
+				template:"aaa"
+			})
+			.state("btn1.sq",{
+				url:"/sq",
+				template:"aaa"
+			})
+			.state("btn2",{
+				url:"/btn2",
+				template:"aaa"
+			})
+			.state("btn3",{
+				url:"/btn3",
+				template:"aaa"
+			})
+			.state("btn4",{
+				url:"/btn4",
+				template:"aaa"
+			})
+		})
+	</script>
+</html>
